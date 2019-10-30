@@ -9,14 +9,15 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 11
         versionName "2.0.4"
     }
@@ -27,7 +28,11 @@ android {
 
 dependencies {
     implementation project(path: ':library-rxbinding')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
+repositories {
+    mavenCentral()
+}
